@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <script defer type="module" src="assets/js/app.js"></script>
+    <script defer src="https://kit.fontawesome.com/d8438e7f2f.js" crossorigin="anonymous"></script>
     <title>To-do-list</title>
 </head>
 <body>
@@ -22,7 +24,25 @@
 
             </div>
         </section>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="close">
+                    <i class="fas fa-times"></i>
+                </div>
+              <label for="task-title">task-name : </label>
+              <input type="text" name="task-title" id="task-title">
+              <label for="task-title">task-description : </label>
+              <textarea name="task-description" id="task-description" cols="25" rows="10">
+              </textarea>
+              <label for="task-date">A finir pour : </label>
+              <input type="date" name="task-date" id="task-date">
+              <input type="submit"  name="submit-task" id="submit" value="Add task">
+            </div>
+          </div>
+        
     </main>
+
+
     <footer>
         <h5 class="author"></h5>
     </footer>
