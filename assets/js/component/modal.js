@@ -62,7 +62,7 @@ const createModal = async (actionType, submitValue, index) => {
 
         submitInput.addEventListener('click', () => {
             for (let j = 0; j < todos.length; j++) {
-                if (todos[j].token === checkedDiv[index].id) {
+                if (todos[j].token === task[index].id) {
                     indexUpdate = j;
                     break;
                 }    
