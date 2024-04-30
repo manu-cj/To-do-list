@@ -23,7 +23,7 @@ const createModal = async (actionType, submitValue, index) => {
     taskDescriptionLabel.htmlFor = 'task-description';
     taskDescriptionInput.name = 'task-description';
     taskDescriptionInput.id = 'task-description';
-    taskDescriptionInput.cols = '25';
+    taskDescriptionInput.cols = '20';
     taskDescriptionInput.rows = '10';
 
     taskDateLabel.htmlFor = 'task-date';

@@ -7,13 +7,12 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(33, 33, 33, 0.4);
-    border-radius: 15px;
+    background-color: rgba(96, 144, 136, 0.525);
 
     .modal-content {
         width: 33%;
-        background-color: #fefefe;
-        margin: 15% auto;
+        background-color: rgb(197, 231, 247);
+        margin: 10% auto;
         padding: 20px;
         border: 1px solid #888;
         display: flex;
@@ -22,12 +21,18 @@
         font-weight: bold;
         text-align: center;
 
+        #submit-task:hover {
+            background-color: rgb(48, 232, 146);
+            cursor: pointer;
+        }
+
         .delete-request {
             width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
+            gap: 15px;
 
             input[type=submit] {
                 width: 50px;
@@ -35,12 +40,14 @@
                 border-radius: 5px;
                 cursor: pointer;
             }
+
             input[name=delete-no]:hover {
                 background-color: tomato;
             }
             input[name=delete-yes]:hover {
-                background-color: rgb(48, 232, 63);
+                background-color: rgb(48, 232, 146);
             }
+            
             
         }        
 
@@ -68,10 +75,21 @@
             }
         }
 
-        
-
         input {
-            margin: 15px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
         }
+        textarea, input {
+            padding: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 80% !important;
     }
 }

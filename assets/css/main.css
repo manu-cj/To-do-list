@@ -13,13 +13,12 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(33, 33, 33, 0.4);
-  border-radius: 15px;
+  background-color: rgba(96, 144, 136, 0.525);
 }
 .modal .modal-content {
   width: 33%;
-  background-color: #fefefe;
-  margin: 15% auto;
+  background-color: rgb(197, 231, 247);
+  margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
   display: flex;
@@ -28,12 +27,17 @@
   font-weight: bold;
   text-align: center;
 }
+.modal .modal-content #submit-task:hover {
+  background-color: rgb(48, 232, 146);
+  cursor: pointer;
+}
 .modal .modal-content .delete-request {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 15px;
 }
 .modal .modal-content .delete-request input[type=submit] {
   width: 50px;
@@ -45,7 +49,7 @@
   background-color: tomato;
 }
 .modal .modal-content .delete-request input[name=delete-yes]:hover {
-  background-color: rgb(48, 232, 63);
+  background-color: rgb(48, 232, 146);
 }
 .modal .modal-content .close {
   width: 100%;
@@ -67,9 +71,21 @@
   text-decoration: none;
 }
 .modal .modal-content input {
-  margin: 15px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+}
+.modal .modal-content textarea, .modal .modal-content input {
+  padding: 5px;
 }
 
+@media screen and (max-width: 600px) {
+  .modal-content {
+    width: 80% !important;
+  }
+}
 body {
   background-image: repeating-linear-gradient(90deg, hsla(253, 0%, 96%, 0.05) 0px, hsla(253, 0%, 96%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0deg, hsla(253, 0%, 96%, 0.05) 0px, hsla(253, 0%, 96%, 0.05) 1px, transparent 1px, transparent 104px), repeating-linear-gradient(0deg, hsla(253, 0%, 96%, 0.07) 0px, hsla(253, 0%, 96%, 0.07) 1px, transparent 1px, transparent 26px), repeating-linear-gradient(90deg, hsla(253, 0%, 96%, 0.07) 0px, hsla(253, 0%, 96%, 0.07) 1px, transparent 1px, transparent 26px), linear-gradient(45deg, hsl(213, 62%, 51%), hsl(213, 62%, 51%));
   max-height: 100vh;
@@ -79,11 +95,18 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
   padding: 15px;
 }
 main .done {
   border-radius: none;
   overflow: hidden;
+  margin-left: none;
+}
+main .todo {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-right: none;
 }
 main .list {
   width: 500px;
@@ -91,19 +114,26 @@ main .list {
   border: 2px tomato solid;
   border-right: none;
   text-align: center;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
   background-color: rgba(0, 255, 153, 0.281);
   overflow-y: scroll;
   overflow-x: hidden;
 }
 main .list .header-list {
   width: 480px;
-  height: 80px;
+  height: 100px;
   position: absolute;
-  border-top-left-radius: 15px;
+  border-top-left-radius: 5px;
   background-color: rgba(0, 255, 174, 0.548);
   padding: 10px;
+}
+main .list .header-list .add-task {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  background-color: rgb(0, 211, 211);
+  cursor: pointer;
 }
 main .list .content {
   width: 100%;
@@ -115,6 +145,10 @@ main .list .content {
   justify-content: start;
   align-items: center;
 }
+main .list .content .alert-time {
+  animation: timeOut 6s forwards;
+  animation-iteration-count: infinite;
+}
 main .list .content .task {
   width: 90%;
   display: flex;
@@ -124,6 +158,7 @@ main .list .content .task {
   align-items: center;
   margin: 10px;
   border-radius: 5px;
+  border: 3px rgb(197, 231, 247) solid;
 }
 main .list .content .task .checked-div {
   height: 100%;
@@ -132,8 +167,8 @@ main .list .content .task .checked-div {
   background-color: rgb(197, 231, 247);
   display: flex;
   justify-content: center;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 main .list .content .task .task-content {
   width: 100%;
@@ -187,4 +222,27 @@ main .list .content .task .task-content .task-date {
   width: 100%;
   margin-top: 5px;
   text-align: end;
+}
+
+@keyframes timeOut {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+@media screen and (max-width: 750px) {
+  main {
+    gap: 50px;
+  }
+  main .header-list {
+    width: 250px !important;
+    height: 100px;
+    position: absolute !important;
+    border-top-left-radius: 5px;
+    background-color: transparent !important;
+    padding: 10px;
+    z-index: 1 !important;
+  }
 }/*# sourceMappingURL=main.css.map */
