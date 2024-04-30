@@ -14,9 +14,11 @@
     </header>
     <main>
         <section class="todo list">
-            <h2>Todo</h2>
-            <ul id="todo-content" class="content"></ul>
+            <div class="header-list">
+                <h2>Todo</h2>
             <button class="add-task">Add task</button>
+            </div>
+            <ul id="todo-content" class="content"></ul>
         </section>
         <section class="done list">
             <h2>Done</h2>
@@ -29,14 +31,6 @@
                 <div class="close">
                     <i class="fas fa-times"></i>
                 </div>
-              <label for="task-title">task-name : </label>
-              <input type="text" name="task-title" id="task-title">
-              <label for="task-title">task-description : </label>
-              <textarea name="task-description" id="task-description" cols="25" rows="10">
-              </textarea>
-              <label for="task-date">A finir pour : </label>
-              <input type="date" name="task-date" id="task-date">
-              <input type="submit"  name="submit-task" id="submit-task" value="Add task">
             </div>
           </div>
         

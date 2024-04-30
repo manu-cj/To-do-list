@@ -3,6 +3,7 @@
 
 body {
     background-image: repeating-linear-gradient(90deg, hsla(253,0%,96%,0.05) 0px, hsla(253,0%,96%,0.05) 1px,transparent 1px, transparent 104px),repeating-linear-gradient(0deg, hsla(253,0%,96%,0.05) 0px, hsla(253,0%,96%,0.05) 1px,transparent 1px, transparent 104px),repeating-linear-gradient(0deg, hsla(253,0%,96%,0.07) 0px, hsla(253,0%,96%,0.07) 1px,transparent 1px, transparent 26px),repeating-linear-gradient(90deg, hsla(253,0%,96%,0.07) 0px, hsla(253,0%,96%,0.07) 1px,transparent 1px, transparent 26px),linear-gradient(45deg, hsl(213,62%,51%),hsl(213,62%,51%));
+    max-height: 100vh;
 }
 
 main {
@@ -13,19 +14,34 @@ main {
     
 
     .list {
-        width: 40%;
+        width: 500px;
+        height: 600px;
         border: 2px tomato solid;
+        border-right: none;
         text-align: center;
-        border-radius: 15px;
-        padding: 15px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
         background-color: rgba(0, 255, 153, 0.281);
         margin: 15px;
+        overflow-y:scroll;
+        overflow-x: hidden;
+
+        .header-list {
+            width: 480px;
+            position: absolute;
+            border-top-left-radius: 15px;
+            background-color: rgba(0, 255, 174, 0.548);
+            padding: 10px;
+        }
         
         .content {
             width: 100%;
+            height: 90%;
+            margin-top: 70px;
+            margin-bottom: 70px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: start;
             align-items: center;
 
             .task {
@@ -35,9 +51,19 @@ main {
                 justify-content: start;
                 gap: 50px;
                 align-items: center;
-                margin: 10px 0 10px 0;
-                padding: 5px;
-                border-radius: 15px;
+                margin: 10px;
+                border-radius: 5px;
+
+                .checked-div {
+                    height: 100%;
+                    width: 20%;
+                    box-sizing: border-box;
+                    background-color: rgb(197, 231, 247);
+                    display: flex;
+                    justify-content: center;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
                 .task-content {
                     width: 100%;
                     display: flex;
@@ -46,6 +72,32 @@ main {
                     height: max-content;
                     padding: 5px;
                     font-weight: bold;
+                    .task-options {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: end;
+                        gap: 5px;
+                        width: 100%;
+                        text-align: end;
+                        margin: 10px;
+                        .fa-trash {
+                            color: rgb(148, 147, 147);
+                            
+                            &:hover {
+                                color: rgb(255, 1, 1);
+                                cursor: pointer;
+                            }
+                        }
+                        .fa-edit {
+                            color: rgb(148, 147, 147);
+                            
+                            &:hover {
+                                color: rgb(0, 162, 255);
+                                cursor: pointer;
+                            }
+                        }
+                        
+                    }
                     .task-title {
                         display: block;
                         width: 100%;
@@ -55,9 +107,10 @@ main {
                         display: block;
                         width: 100%;
                         min-height: 50px;
+                        word-break: break-all;
                         margin: 5px;
                         padding: 5px;
-                        text-align: center;
+                        text-align: justify;
                     }
                     .task-date {
                         display: block;

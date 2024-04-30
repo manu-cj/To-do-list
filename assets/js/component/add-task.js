@@ -1,5 +1,8 @@
-const todos = [];
+import getTask from "./get-task.js";
+
+
 const addTask = () => {
+    
     const taskTitle = document.getElementById('task-title');
     const taskDescription = document.getElementById('task-description');
     const taskDate = document.getElementById('task-date');
@@ -21,6 +24,8 @@ const addTask = () => {
 
         localStorage.setItem('todos', JSON.stringify(todos));
         modal.style.display = "none";
+        getTask();
+        
     })
 }
 
