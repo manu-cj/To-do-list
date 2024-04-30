@@ -1,5 +1,5 @@
 
-const getTask = () => {
+const getTask = async () => {
 
     let backgroundColors = ['#FFCCCC','#FFDAB9', '#CCCCFF','teal', '#00FF00', 'tomato', 'cyan', '#FFFFCC', '#FFCCFF'];
 
@@ -42,6 +42,7 @@ const getTask = () => {
                 isDone.classList.add('is-done');
                 taskContent.classList.add('task-content');
                 task.classList.add('task');
+                task.id = todos[i].token;
                 taskOptions.classList.add('task-options')
                 garbageIcon.classList.add('fas', 'fa-trash');
                 garbageIcon.title = 'Delete';

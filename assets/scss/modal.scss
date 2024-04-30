@@ -19,7 +19,30 @@
         display: flex;
         flex-direction: column;
         border-radius: 10px;
-        
+        font-weight: bold;
+        text-align: center;
+
+        .delete-request {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            input[type=submit] {
+                width: 50px;
+                padding: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            input[name=delete-no]:hover {
+                background-color: tomato;
+            }
+            input[name=delete-yes]:hover {
+                background-color: rgb(48, 232, 63);
+            }
+            
+        }        
 
         .close {
             width: 100%;
