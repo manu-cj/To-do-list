@@ -239,7 +239,8 @@ main .list .content .task .task-content .task-date {
   main .header-list {
     width: 250px !important;
     height: 100px;
-    position: absolute !important;
+    position: initial !important;
+    text-align: center;
     border-top-left-radius: 5px;
     background-color: transparent !important;
     padding: 10px;
